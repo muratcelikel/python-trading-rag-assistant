@@ -1,0 +1,1 @@
+"""Trading RAG Assistant package."""
