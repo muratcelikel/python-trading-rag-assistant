@@ -1,0 +1,11 @@
+ÖRNEK TRADING STRATEJİ NOTLARI
+
+Bu dosya yalnızca eğitim ve yazılım testi amacıyla hazırlanmış sentetik bir örnektir.
+
+Günlük zaman dilimindeki 20 periyotluk hareketli ortalama yön filtresi olarak kullanılabilir. Fiyat ortalamanın üzerindeyse uzun yönlü senaryolar araştırılır. Ancak yalnızca ortalamanın üzerinde olmak işlem açmak için yeterli değildir.
+
+Seans içi değerlendirmede VWAP, alıcı ve satıcı kontrolünü anlamaya yardımcı bir filtre olarak ele alınabilir. Giriş için önemli bir seviyenin kırılması ve ardından yeniden test edilmesi beklenir. İlk kırılma hareketi kovalanmaz.
+
+Risk yönetiminde işlem başına ve günlük toplam zarar sınırı bulunmalıdır. Bu örnek projede günlük maksimum kayıp yüzde iki ile sınırlandırılmıştır. Risk sınırı aşılırsa sistem no-trade durumuna geçer.
+
+Bu proje gerçek işlem açmaz. Amaç, trading notlarını okuyabilen, temizleyebilen, parçalara ayırabilen ve ilerleyen aşamada kaynak dayanaklı sorulara cevap verebilen bir araştırma sistemi geliştirmektir.
