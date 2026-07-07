@@ -1,27 +1,50 @@
-# Trading RAG Assistant
+# Python Trading RAG Assistant
 
-Bu proje, Python bitirme ödevi kapsamında geliştirilecek yapay zekâ destekli bir doküman analiz sistemi olarak planlanmaktadır.
+Bu proje, Python bitirme ödevi kapsamında geliştirilen kaynak dayanaklı bir trading doküman araştırma sistemidir.
 
-Projenin temel amacı; trading ile ilgili eğitim notları, strateji açıklamaları ve örnek transkriptleri daha düzenli analiz edebilmek için basit bir RAG hazırlık sistemi oluşturmaktır.
+Sistem; TXT/Markdown notlarını okur, temizler, parçalara ayırır, çok dilli embedding ile yerel ChromaDB'ye kaydeder ve kullanıcı sorularında ilgili kaynakları bulur. Yeterince ilgili kaynak bulunduğunda LLM yalnızca bu bağlama dayanarak Türkçe cevap üretir; kullanılan parçalar cevapla birlikte gösterilir.
 
-Bu proje doğrudan al-sat sinyali üretmek, yatırım tavsiyesi vermek veya canlı işlem yapmak için tasarlanmamıştır. İlk hedef, dokümanları düzenli biçimde işleyebilen ve ilerleyen aşamada soru-cevap sistemine temel oluşturabilecek bir Python projesi geliştirmektir.
+> Eğitim ve araştırma amaçlıdır. Canlı işlem, broker entegrasyonu, otomatik emir gönderimi ve yatırım tavsiyesi kapsam dışıdır.
 
-## İlk Hedefler
+## Mevcut Özellikler
 
-- Proje klasör yapısını oluşturmak
-- Proje amacını ve kapsamını netleştirmek
-- Küçük örnek metin dosyalarıyla çalışmak
-- Python ile metin okuma, temizleme ve parçalara ayırma işlemlerini hazırlamak
-- Daha sonraki aşamalarda retrieval ve RAG akışına geçmek
+- TXT ve Markdown belge okuma
+- Metin temizleme ve bindirmeli parçalama
+- Çoklu belge klasörü indeksleme
+- Yerel Sentence Transformers embedding
+- Yerel ChromaDB semantic retrieval
+- Kaynak dosyası, parça ve kelime aralığı gösterme
+- Mesafe eşiğiyle ilgisiz retrieval sonuçlarını eleme
+- Groq ile kaynak dayanaklı cevap üretimi
+- İnsan yazımı test setiyle `source_hit_rate@k` retrieval değerlendirmesi
+- Birim testleri
 
-## Kullanılacak Teknolojiler
+## Akış
 
-- Python
-- Markdown dokümantasyon
-- GitHub
-- Temel dosya okuma ve metin işleme
-- İlerleyen aşamada embedding ve retrieval yaklaşımı
+```text
+belge klasörü
+→ loader / cleaner / chunker
+→ embedding
+→ ChromaDB
+→ semantic retrieval + eşik
+→ kaynak dayanaklı LLM cevabı
+→ kaynak listesi
+```
 
-## Proje Durumu
+## Hızlı Demo
 
-Proje başlangıç aşamasındadır. İlk hafta içinde temel klasör yapısı, örnek veri ve basit metin işleme kodları hazırlanacaktır.
+```bash
+python -m pip install -e .[dev]
+python scripts/index_documents.py data/sample --reset
+python scripts/search_sample.py
+python scripts/evaluate_retrieval.py
+pytest
+```
+
+LLM cevabı için `.env.example` dosyasını `.env` olarak kopyalayın ve `GROQ_API_KEY` ekleyin:
+
+```bash
+python scripts/ask_documents.py "Günlük maksimum kayıp sınırı nedir?"
+```
+
+Ayrıntılar için `docs/06_calistirma_ve_demo.md` dosyasına bakın.

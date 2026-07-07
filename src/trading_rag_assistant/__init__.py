@@ -1,1 +1,3 @@
-"""Trading RAG Assistant package."""
+"""Python Trading RAG Assistant package."""
+
+__version__ = "0.4.0"

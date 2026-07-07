@@ -1,0 +1,18 @@
+[
+  {
+    "question": "Günlük maksimum kayıp sınırı nedir?",
+    "expected_source_key": "risk_management_notes.md"
+  },
+  {
+    "question": "Kayıp sınırı aşılırsa sistem ne yapar?",
+    "expected_source_key": "risk_management_notes.md"
+  },
+  {
+    "question": "Kırılma sonrası hangi doğrulama beklenir?",
+    "expected_source_key": "market_structure_notes.md"
+  },
+  {
+    "question": "Hareketli ortalama tek başına giriş sinyali midir?",
+    "expected_source_key": "market_structure_notes.md"
+  }
+]
