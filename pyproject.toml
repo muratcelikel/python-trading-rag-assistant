@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "python-trading-rag-assistant"
-version = "0.4.0"
+version = "1.4.8"
 description = "Trading dokümanları için kaynak dayanaklı Python RAG araştırma projesi"
 requires-python = ">=3.10"
 dependencies = [
@@ -12,6 +12,9 @@ dependencies = [
     "sentence-transformers>=5.0,<6.0",
     "groq>=0.33,<2.0",
     "python-dotenv>=1.0,<2.0",
+    "pypdf>=5.0,<7.0",
+    "python-docx>=1.1,<2.0",
+    "streamlit>=1.41,<2.0",
 ]
 
 [project.optional-dependencies]
@@ -23,3 +26,7 @@ where = ["src"]
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 testpaths = ["tests"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true

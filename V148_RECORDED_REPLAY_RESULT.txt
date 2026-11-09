@@ -1,0 +1,11 @@
+V1.4.8 RECORDED V1.4.7 OLLAMA REPLAY REGRESSION
+================================================
+Total cases: 100
+Passed cases: 100
+Pass rate: 100.00%
+Retrieval hit rate: 100.00%
+Answer keyword hit rate: 100.00%
+Refusal success rate: 100.00%
+Hallucination guard rate: 100.00%
+
+Important: This is a deterministic replay of the 100 recorded V1.4.7 live Ollama outputs through the new V1.4.8 grounding guard and evaluator. It is not a fresh Ollama network/model run inside the build environment.

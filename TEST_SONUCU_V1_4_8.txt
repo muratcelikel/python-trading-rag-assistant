@@ -1,0 +1,13 @@
+Python Trading RAG Assistant v1.4.8 — FINAL TEST STATUS
+======================================================
+Unit tests: 74 passed
+Final smoke check: OK
+Recorded live-output regression replay: 100/100 PASS
+Fresh live Ollama run on submission PC (11.08.2026): 100/100 PASS
+Retrieval hit rate: 100.00%
+Answer keyword hit rate: 100.00%
+Refusal success rate: 100.00%
+Hallucination guard rate: 100.00%
+Runtime errors: 0
+Average latency: 9.312 seconds
+Evaluator: contract-aware v2

@@ -1,0 +1,13 @@
+PYTHON TRADING RAG ASSISTANT V1.4.3 - FINAL TEST
+
+- pytest: 58 passed
+- compileall: PASS
+- Eklenen canlı evaluation dayanıklılığı:
+  * Ollama timeout 300s
+  * keep_alive 30m
+  * retry/backoff
+  * soru bazlı checkpoint
+  * kaldığı yerden devam
+  * runtime_error durumunda tüm koşunun durmaması
+  * runtime_error vakalarının sonraki çalıştırmada yeniden denenmesi
+- Canlı tekil Ollama RAG testi kullanıcı bilgisayarında doğrulandı (answered + kaynak/chunk/distance görünümü).
